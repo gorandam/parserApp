@@ -13,6 +13,11 @@ class CreateController
         // parser data
         $data = $_GET['task'];
 
+        //sanitaze data
+        // $data = filter_var($data, FILTER_SANITZE_STRING);
+        //valildate data
+
+        //dispatch to referended lower layer
         if ($data === 'xml') {
             $repository = new XmlRepository;
         } elseif ($data === 'json') {
@@ -22,9 +27,11 @@ class CreateController
             ;
         }
 
+        //dispatch to referended lower layer
         // Here we can do type cheking to check if returned true from the database
         $repository->create();
 
+        //Redirect to index page
         redirect('index');
     }
 }
