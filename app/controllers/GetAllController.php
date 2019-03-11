@@ -8,8 +8,6 @@ class GetAllController
 {
     public function index()
     {
-        // var_dump('here everything is ok');
-        // die();
         $parsedDatas = App::get('database')->selectAll('articles');
 
         return view('index', compact('parsedDatas'));

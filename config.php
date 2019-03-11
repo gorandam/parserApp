@@ -4,7 +4,7 @@ return array(
     'database' => array(
     'dbhost' => 'localhost',
     'dbuser' => 'root',
-    'dbpass' => '',
+    'dbpass' => 'rootpass',
     'dbport' => 3306,
     'dbname' => 'mdpiTest',
     'error' =>''

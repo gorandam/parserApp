@@ -12,8 +12,6 @@ class QueryBuilder
     public function selectAll($table)
     {
         $statement = $this->pdo->prepare("select * from {$table}");
-        // var_dump($statement);
-        // die();
 
         $statement->execute();
 
@@ -35,11 +33,8 @@ class QueryBuilder
          ':' . implode(', :', array_keys($parameters))
         );
 
-        // var_dump($sql);
-        // die();
         try {
             $statement = $this->pdo->prepare($sql);
-
             $statement->execute($parameters);
         } catch (Exception $e) {
             die('Whops something went wront!');
