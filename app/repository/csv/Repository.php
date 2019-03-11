@@ -24,6 +24,7 @@ class Repository
             $parsedData['title'] = (string) $item['title'];
             $parsedData['pub_date']  = (string) $item['date_published'];
 
+            //Here we use model here to encapsulate data, and use that encapsulated data in the anonther new mapper layer to encapsulate it and dispatch it to the database
             // $data = Model::fromArray($parsedData);
             $parsedDatas[] = $parsedData;
         }

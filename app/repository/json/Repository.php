@@ -8,8 +8,8 @@ class Repository
 {
     public function create()
     {
-        // var_dump('Everyithing works json');
-        // die();
+        var_dump('Everyithing works json');
+        die();
 
         $parsedDatas = [];
         $apiPath = App::get('configLocal')['sources']['json'];

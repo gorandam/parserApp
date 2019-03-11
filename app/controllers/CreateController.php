@@ -16,16 +16,11 @@ class CreateController
         //sanitaze data
         // $data = filter_var($data, FILTER_SANITZE_STRING);
         //valildate data
+        var_dump($data);
+        die();
 
         //dispatch to referended lower layer
-        if ($data === 'xml') {
-            $repository = new XmlRepository;
-        } elseif ($data === 'json') {
-            $repository = new JsonRepository;
-        } else {
-            $repository = new CsvRepository;
-            ;
-        }
+        $repository = $this->make($data);
 
         //dispatch to referended lower layer
         // Here we can do type cheking to check if returned true from the database
@@ -33,5 +28,22 @@ class CreateController
 
         //Redirect to index page
         redirect('index');
+    }
+
+
+    /**
+    *  Small factory method
+    * @param $data
+    * @return Repository
+    */
+    public function make($data)
+    {
+        if ($data === 'xml') {
+            return new XmlRepository;
+        } elseif ($data === 'json') {
+            return new JsonRepository;
+        } else {
+            return new CsvRepository;
+        }
     }
 }
