@@ -16,8 +16,6 @@ class CreateController
         //sanitaze data
         // $data = filter_var($data, FILTER_SANITZE_STRING);
         //valildate data
-        var_dump($data);
-        die();
 
         //dispatch to referended lower layer
         $repository = $this->make($data);
